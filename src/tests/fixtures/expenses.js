@@ -3,7 +3,7 @@ import moment from 'moment'
 const expenses = [{
     id: '1',
     description: "First expense",
-    note: '',
+    note: 'TestNote1',
     amount: 100,
     createdAt: 0
 },
