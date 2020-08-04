@@ -3,9 +3,9 @@ import ReactDOM from 'react-dom'
 import { Provider } from 'react-redux'
 import AppRouter from './components/routers/AppRouter'
 import configureStore from './store/configureStore'
-import { addExpense, removeExpense, editExpense } from './actions/expenses'
-import { setTextFilter, setEndDate, setStartDate, sortByAmount, sortByDate} from './actions/filters'
-import getVisibleExpenses from './selectors/expenses'
+// import { addExpense, removeExpense, editExpense } from './actions/expenses'
+// import { setTextFilter, setEndDate, setStartDate, sortByAmount, sortByDate} from './actions/filters'
+// import getVisibleExpenses from './selectors/expenses'
 
 import 'normalize.css/normalize.css';
 import './styles/styles.scss';
