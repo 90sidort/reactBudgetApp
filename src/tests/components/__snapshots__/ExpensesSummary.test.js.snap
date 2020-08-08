@@ -1,0 +1,40 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Should work for multiply expenses 1`] = `
+<div>
+  <p>
+    Viewing 
+    10
+     
+    expenses
+    , totaling 
+    $10,002.32
+  </p>
+</div>
+`;
+
+exports[`Should work for no expenses 1`] = `
+<div>
+  <p>
+    Viewing 
+    0
+     
+    expenses
+    , totaling 
+    $0.00
+  </p>
+</div>
+`;
+
+exports[`Should work for single expense 1`] = `
+<div>
+  <p>
+    Viewing 
+    1
+     
+    expense
+    , totaling 
+    $10.32
+  </p>
+</div>
+`;
