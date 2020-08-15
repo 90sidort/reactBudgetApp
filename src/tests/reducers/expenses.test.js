@@ -30,3 +30,8 @@ test('Should not edit an expense if id is invalid', () => {
     const result = expensesReducer(expenseMock, {type: 'EDIT_EXPENSE', id: '5', updates: {description: 'editedExpense'}})
     expect(result).toEqual(expenseMock)
 })
+
+test('Should set expenses', () => {
+    const result = expensesReducer(expenseMock, {type: 'SET_EXPENSES', expenses: expenseMock[1]})
+    expect(result).toEqual(expenseMock[1])
+})
