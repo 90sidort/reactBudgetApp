@@ -1,12 +1,13 @@
 import React from 'react'
 import ReactDOM from 'react-dom'
 import { Provider } from 'react-redux'
-import AppRouter from './components/routers/AppRouter'
+import AppRouter, { history } from './components/routers/AppRouter'
 import configureStore from './store/configureStore'
 import './firebase/firebase'
 import { addExpense, removeExpense, editExpense, setExpenses, startSetExpense } from './actions/expenses'
-// import { setTextFilter, setEndDate, setStartDate, sortByAmount, sortByDate} from './actions/filters'
+import { login, logout } from './actions/auth'
 import getVisibleExpenses from './selectors/expenses'
+import { firebase } from './firebase/firebase'
 
 import 'normalize.css/normalize.css';
 import './styles/styles.scss';
@@ -25,7 +26,7 @@ const store = configureStore()
 // store.dispatch(addExpense({description: 'rent', amount: 1300, createdAt: 9999999}))
 // store.dispatch(addExpense({description: 'Gas bill', amount: 100, createdAt: 100}))
 
-store.dispatch(startSetExpense())
+// store.dispatch(startSetExpense())
 
 const jsx = (
     <Provider store={store}>
@@ -35,7 +36,25 @@ const jsx = (
 
 ReactDOM.render(<p>Loading...</p>, document.getElementById('app'))
 
-store.dispatch(startSetExpense()).then(() => {
-    ReactDOM.render(jsx, document.getElementById('app'))
-})
+let hasRendered = false
+const renderApp = () => {
+    if(!hasRendered){ReactDOM.render(jsx, document.getElementById('app'))}
+    hasRendered = true
+}
 
+firebase.auth().onAuthStateChanged((user) => {
+    if (user){
+        store.dispatch(login(user.uid))
+        store.dispatch(startSetExpense()).then(() => {
+            renderApp()
+            if(history.location.pathname === '/') {
+                history.push('/dashboard')
+            }
+        })
+    }
+    else {
+        store.dispatch(logout())
+        renderApp()
+        history.push('/')
+    }
+})
