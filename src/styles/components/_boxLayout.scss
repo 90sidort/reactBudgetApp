@@ -1,0 +1,33 @@
+.boxLayout {
+    background: url('/images/background.jpg');
+    height: 100vh;
+    width: 100vw;
+    background-size: cover;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    opacity: 0.9;
+}
+
+.boxLayoutBox {
+    background: fade-out($color: white, $amount: .15);
+    border-radius: 5px;
+    text-align: center;
+    width: 25rem;
+    padding: $l-size $m-size;
+}
+
+.boxLayoutTitle {
+    margin: 0 0 $m-size 0;
+    line-height: 1;
+}
+
+.buttonLogin {
+    background: #1c88bf;
+    border-radius: 3px;
+    border-color: blue;
+    color: fade-out($color: white, $amount: .15);
+    margin: 2px;
+    padding: 3px;
+    font-size: 2rem;
+}
