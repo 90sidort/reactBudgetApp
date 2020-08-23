@@ -8,8 +8,10 @@ export const ExpensesSummary = ({expensesCount, expensesTotal}) => {
     const isSingle = expensesCount === 1 ? 'expense' : 'expenses'
     const formattedSum = numeral(expensesTotal / 100).format('$0,0.00')
     return(
-        <div>
-            <p>Viewing {expensesCount} {isSingle}, totaling {formattedSum}</p>
+        <div className="pageHeader">
+            <div className="summaryContent">
+                <p className="pageHeaderTitle">Viewing <span>{expensesCount}</span> {isSingle}, totaling <span>{formattedSum}</span>.</p>
+            </div>
         </div>
     )
 }
