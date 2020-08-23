@@ -1,40 +1,79 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`Should work for multiply expenses 1`] = `
-<div>
-  <p>
-    Viewing 
-    10
-     
-    expenses
-    , totaling 
-    $10,002.32
-  </p>
+<div
+  className="pageHeader"
+>
+  <div
+    className="summaryContent"
+  >
+    <p
+      className="pageHeaderTitle"
+    >
+      Viewing 
+      <span>
+        10
+      </span>
+       
+      expenses
+      , totaling 
+      <span>
+        $10,002.32
+      </span>
+      .
+    </p>
+  </div>
 </div>
 `;
 
 exports[`Should work for no expenses 1`] = `
-<div>
-  <p>
-    Viewing 
-    0
-     
-    expenses
-    , totaling 
-    $0.00
-  </p>
+<div
+  className="pageHeader"
+>
+  <div
+    className="summaryContent"
+  >
+    <p
+      className="pageHeaderTitle"
+    >
+      Viewing 
+      <span>
+        0
+      </span>
+       
+      expenses
+      , totaling 
+      <span>
+        $0.00
+      </span>
+      .
+    </p>
+  </div>
 </div>
 `;
 
 exports[`Should work for single expense 1`] = `
-<div>
-  <p>
-    Viewing 
-    1
-     
-    expense
-    , totaling 
-    $10.32
-  </p>
+<div
+  className="pageHeader"
+>
+  <div
+    className="summaryContent"
+  >
+    <p
+      className="pageHeaderTitle"
+    >
+      Viewing 
+      <span>
+        1
+      </span>
+       
+      expense
+      , totaling 
+      <span>
+        $10.32
+      </span>
+      .
+    </p>
+  </div>
 </div>
 `;

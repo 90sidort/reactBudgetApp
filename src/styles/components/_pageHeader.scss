@@ -1,5 +1,5 @@
 .pageHeader{
-    background: #f7f7f7;
+    background: $off-white;
     padding: $m-size 0;
     margin-bottom: $l-size;
 }
@@ -12,5 +12,9 @@
     }
 }
 .pageHeaderTitle{
-
+    font-weight: 300;
+    margin: 0;
+    span {
+        font-weight: 700;
+    }
 }
