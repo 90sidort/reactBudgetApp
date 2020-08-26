@@ -1,7 +1,16 @@
 import React from 'react'
 import { connect } from 'react-redux'
-import { setTextFilter, sortByDate, sortByAmount, setStartDate, setEndDate } from '../actions/filters'
+import {
+    setTextFilter,
+    sortByDate,
+    sortByAmount,
+    setStartDate,
+    setEndDate,
+    setMinAmount,
+    setMaxAmount
+} from '../actions/filters'
 import { DateRangePicker } from 'react-dates'
+import ReactSlider from 'react-slider'
 
 export class ExpenseListFilters extends React.Component {
     state = {
@@ -20,6 +29,10 @@ export class ExpenseListFilters extends React.Component {
     onSortChange = (e) => {
         if(e.target.value === 'amount'){this.props.sortByAmount()}
         else {this.props.sortByDate()}
+    }
+    OnValuesChange = (value) => {
+        this.props.setMinAmount(value[0])
+        this.props.setMaxAmount(value[1])
     }
     render() {
         return (
@@ -53,6 +66,23 @@ export class ExpenseListFilters extends React.Component {
                         />
                     </div>
                 </div>
+                <div>
+                    <ReactSlider
+                        className="horizontal-slider"
+                        thumbClassName="example-thumb"
+                        trackClassName="example-track"
+                        defaultValue={[this.props.filters.minAmount, this.props.filters.maxAmount]}
+                        step={100}
+                        max={10000}
+                        minDistance={100}
+                        ariaLabel={['Lower thumb', 'Upper thumb']}
+                        ariaValuetext={state => `Thumb value ${state.valueNow}`}
+                        renderThumb={(props, state) => <div {...props}>{state.valueNow}</div>}
+                        pearling
+                        minDistance={10}
+                        onChange={this.OnValuesChange}
+                    />
+                </div>
             </div>
         )
     }
@@ -65,7 +95,9 @@ const mapDispatchToProps = (dispatch) => ({
     setEndDate: (endDate) => dispatch(setEndDate(endDate)),
     setTextFilter: (text) => dispatch(setTextFilter(text)),
     sortByDate: () => dispatch(sortByDate()),
-    sortByAmount: () => dispatch(sortByAmount())
+    sortByAmount: () => dispatch(sortByAmount()),
+    setMinAmount: (minValue) => dispatch(setMinAmount(minValue)),
+    setMaxAmount: (maxValue) => dispatch(setMaxAmount(maxValue)),
 })
 
 export default connect(mapStateToProps, mapDispatchToProps)(ExpenseListFilters)
