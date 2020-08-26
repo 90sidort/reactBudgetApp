@@ -7,7 +7,9 @@ test('Should setup default filter values', () => {
         text: '',
         sortBy: 'date',
         startDate: moment().startOf('month'),
-        endDate: moment().endOf('month')
+        endDate: moment().endOf('month'),
+        maxAmount: 10000,
+        minAmount: 0
     })
 })
 
@@ -51,4 +53,14 @@ test('Should set start date to a specific date', () => {
 test('Should set end date to a specific date', () => {
     const state = filtersReducer(undefined, {type: 'SET_END_DATE', endDate: moment(0).valueOf()})
     expect(state.endDate).toBe(moment(0).valueOf())
+})
+
+test('Should set min amount to 100', () => {
+    const state = filtersReducer(undefined, {type: 'SET_MIN_AMOUNT', minAmount: 100})
+    expect(state.minAmount).toBe(100)
+})
+
+test('Should set min amount to 100', () => {
+    const state = filtersReducer(undefined, {type: 'SET_MAX_AMOUNT', maxAmount: 1100})
+    expect(state.maxAmount).toBe(1100)
 })
