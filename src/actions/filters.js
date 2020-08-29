@@ -4,6 +4,18 @@ export const setTextFilter = (text = '') => ({
     text
 })
 
+//SET_MIN_AMOUNT
+export const setMinAmount = (minAmount = 0) => ({
+    type: 'SET_MIN_AMOUNT',
+    minAmount
+})
+
+//SET_MAX_AMOUNT
+export const setMaxAmount = (maxAmount = 10000) => ({
+    type: 'SET_MAX_AMOUNT',
+    maxAmount
+})
+
 // SORT_BY_DATE
 export const sortByDate = () => ({
     type: 'SORT_BY_DATE',

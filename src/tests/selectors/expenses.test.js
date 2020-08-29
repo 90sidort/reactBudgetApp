@@ -7,7 +7,9 @@ test("Should filter by text value", () => {
         text: 'expense',
         sortBy: 'date',
         startDate: undefined,
-        endDate: undefined
+        endDate: undefined,
+        minAmount:0,
+        maxAmount: 10000
     }
     const result = getVisibleExpenses(mockedExpenses, filters)
     expect(result.length).toBe(2)
@@ -19,7 +21,9 @@ test("Should filter by start date", () => {
         text: '',
         sortBy: 'date',
         startDate: moment(0),
-        endDate: undefined
+        endDate: undefined,
+        minAmount:0,
+        maxAmount: 10000
     }
     const result = getVisibleExpenses(mockedExpenses, filters)
     expect(result.length).toBe(2)
@@ -31,7 +35,9 @@ test("Should filter by start date", () => {
         text: '',
         sortBy: 'date',
         startDate: undefined,
-        endDate: moment(0)
+        endDate: moment(0),
+        minAmount:0,
+        maxAmount: 10000
     }
     const result = getVisibleExpenses(mockedExpenses, filters)
     expect(result.length).toBe(2)
@@ -43,7 +49,9 @@ test("Should sort by date", () => {
         text: '',
         sortBy: 'date',
         startDate: undefined,
-        endDate: undefined
+        endDate: undefined,
+        minAmount:0,
+        maxAmount: 10000
     }
     const result = getVisibleExpenses(mockedExpenses, filters)
     expect(result.length).toBe(3)
@@ -55,9 +63,39 @@ test("Should filter by start date", () => {
         text: '',
         sortBy: 'amount',
         startDate: undefined,
-        endDate: undefined
+        endDate: undefined,
+        minAmount:0,
+        maxAmount: 10000
     }
     const result = getVisibleExpenses(mockedExpenses, filters)
     expect(result.length).toBe(3)
     expect(result).toEqual([mockedExpenses[2], mockedExpenses[1], mockedExpenses[0]])
+})
+
+test("Should filter by min amount", () => {
+    const filters = {
+        text: '',
+        sortBy: 'amount',
+        startDate: undefined,
+        endDate: undefined,
+        minAmount: 9,
+        maxAmount: 10000
+    }
+    const result = getVisibleExpenses(mockedExpenses, filters)
+    expect(result.length).toBe(2)
+    expect(result).toEqual([mockedExpenses[2], mockedExpenses[1]])
+})
+
+test("Should filter by max amount", () => {
+    const filters = {
+        text: '',
+        sortBy: 'amount',
+        startDate: undefined,
+        endDate: undefined,
+        minAmount: 0,
+        maxAmount: 10
+    }
+    const result = getVisibleExpenses(mockedExpenses, filters)
+    expect(result.length).toBe(2)
+    expect(result).toEqual([mockedExpenses[1], mockedExpenses[0]])
 })

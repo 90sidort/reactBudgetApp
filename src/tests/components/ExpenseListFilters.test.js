@@ -3,7 +3,7 @@ import { shallow } from 'enzyme'
 import { ExpenseListFilters } from '../../components/ExpenseListFilters'
 import { emptyFilters, setFilters } from '../fixtures/filters'
 
-let setTextFilter, sortByDate, sortByAmount, setStartDate, setEndDate, wrapper
+let setTextFilter, sortByDate, sortByAmount, setStartDate, setEndDate, wrapper, setMinAmount, setMaxAmount
 
 beforeEach(() => {
     setTextFilter = jest.fn()
@@ -11,6 +11,8 @@ beforeEach(() => {
     sortByAmount = jest.fn()
     setStartDate = jest.fn()
     setEndDate = jest.fn()
+    setMinAmount = jest.fn()
+    setMaxAmount = jest.fn()
     wrapper= shallow(
         <ExpenseListFilters
             filters={emptyFilters}
@@ -19,6 +21,8 @@ beforeEach(() => {
             sortByAmount={sortByAmount}
             setStartDate={setStartDate}
             setEndDate={setEndDate}
+            setMinAmount = {setMinAmount}
+            setMaxAmount = {setMaxAmount}
         />)
 })
 
