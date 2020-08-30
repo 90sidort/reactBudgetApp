@@ -75,7 +75,7 @@ class ExpenseForm extends React.Component {
                     value={this.state.amount}
                     onChange={this.onAmountChange}
                 />
-                <select value={this.state.category} onChange={this.onCategoryChange}>
+                <select value={this.state.category} onChange={this.onCategoryChange} className="text-select">
                     <option value={-1} disabled>Select category:</option>
                     <option value="food">Food</option>
                     <option value="bills">Bills</option>

@@ -1,7 +1,12 @@
 .input-group {
     display: flex;
     flex-direction: column;
+    margin: auto;
+    width: 60%;
     margin-bottom: $s-size;
+    .DateRangePicker {
+        text-align: center;
+    }
     @media (min-width: $desktop-breakpoint) {
         flex-direction: row;
         margin-bottom: $l-size;
@@ -14,4 +19,9 @@
     @media (min-width: $desktop-breakpoint) {
         margin: 0 $l-size 0 0;
     }
+}
+
+.input-group__item__range {
+    @extend .input-group__item;
+    width: 100%;
 }
