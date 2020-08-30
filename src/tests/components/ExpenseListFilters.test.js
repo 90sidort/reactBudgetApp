@@ -3,10 +3,11 @@ import { shallow } from 'enzyme'
 import { ExpenseListFilters } from '../../components/ExpenseListFilters'
 import { emptyFilters, setFilters } from '../fixtures/filters'
 
-let setTextFilter, sortByDate, sortByAmount, setStartDate, setEndDate, wrapper, setMinAmount, setMaxAmount
+let setTextFilter, setCategory, sortByDate, sortByAmount, setStartDate, setEndDate, wrapper, setMinAmount, setMaxAmount
 
 beforeEach(() => {
     setTextFilter = jest.fn()
+    setCategory = jest.fn()
     sortByDate = jest.fn()
     sortByAmount = jest.fn()
     setStartDate = jest.fn()
@@ -16,6 +17,7 @@ beforeEach(() => {
     wrapper= shallow(
         <ExpenseListFilters
             filters={emptyFilters}
+            setCategory={setCategory}
             setTextFilter={setTextFilter}
             sortByDate={sortByDate}
             sortByAmount={sortByAmount}
@@ -44,13 +46,18 @@ test('Should handle setTextFilter correctly', () => {
 })
 
 test('Should handle sortByDate correctly', () => {
-    wrapper.find('select').simulate('change', { target: { value: 'date' } })
+    wrapper.find('select').at(0).simulate('change', { target: { value: 'date' } })
     expect(sortByDate).toHaveBeenCalled()
 })
 
 test('Should handle sortByAmount correctly', () => {
-    wrapper.find('select').simulate('change', { target: { value: 'amount' } })
+    wrapper.find('select').at(0).simulate('change', { target: { value: 'amount' } })
     expect(sortByAmount).toHaveBeenCalled()
+})
+
+test('Should handle setCategory correctly', () => {
+    wrapper.find('select').at(1).simulate('change', { target: { value: 'taxes' } })
+    expect(setCategory).toHaveBeenCalled()
 })
 
 test('Should handle date change', () => {

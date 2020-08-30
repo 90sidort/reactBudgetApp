@@ -42,6 +42,80 @@ exports[`Should render ExpenseListFilters correctly 1`] = `
       <div
         className="input-group__item"
       >
+        <select
+          className="text-select"
+          onChange={[Function]}
+          value="all"
+        >
+          <option
+            disabled={true}
+            value={-1}
+          >
+            Select category:
+          </option>
+          <option
+            value="all"
+          >
+            All
+          </option>
+          <option
+            value="food"
+          >
+            Food
+          </option>
+          <option
+            value="bills"
+          >
+            Bills
+          </option>
+          <option
+            value="clothing"
+          >
+            Clothing
+          </option>
+          <option
+            value="travel"
+          >
+            Travel
+          </option>
+          <option
+            value="taxes"
+          >
+            Taxes
+          </option>
+          <option
+            value="entertainment"
+          >
+            Entertainment
+          </option>
+          <option
+            value="education"
+          >
+            Education
+          </option>
+          <option
+            value="shopping"
+          >
+            Shopping
+          </option>
+          <option
+            value="other"
+          >
+            Other
+          </option>
+        </select>
+      </div>
+    </div>
+  </div>
+  <div
+    className="content-container"
+  >
+    <div
+      className="input-group"
+    >
+      <div
+        className="input-group__item__range"
+      >
         <DateRangePicker
           anchorDirection="left"
           customArrowIcon={null}
@@ -209,6 +283,80 @@ exports[`Should render ExpenseListFilters with setFilters correctly 1`] = `
       </div>
       <div
         className="input-group__item"
+      >
+        <select
+          className="text-select"
+          onChange={[Function]}
+          value="all"
+        >
+          <option
+            disabled={true}
+            value={-1}
+          >
+            Select category:
+          </option>
+          <option
+            value="all"
+          >
+            All
+          </option>
+          <option
+            value="food"
+          >
+            Food
+          </option>
+          <option
+            value="bills"
+          >
+            Bills
+          </option>
+          <option
+            value="clothing"
+          >
+            Clothing
+          </option>
+          <option
+            value="travel"
+          >
+            Travel
+          </option>
+          <option
+            value="taxes"
+          >
+            Taxes
+          </option>
+          <option
+            value="entertainment"
+          >
+            Entertainment
+          </option>
+          <option
+            value="education"
+          >
+            Education
+          </option>
+          <option
+            value="shopping"
+          >
+            Shopping
+          </option>
+          <option
+            value="other"
+          >
+            Other
+          </option>
+        </select>
+      </div>
+    </div>
+  </div>
+  <div
+    className="content-container"
+  >
+    <div
+      className="input-group"
+    >
+      <div
+        className="input-group__item__range"
       >
         <DateRangePicker
           anchorDirection="left"

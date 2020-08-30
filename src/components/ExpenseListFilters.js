@@ -7,7 +7,8 @@ import {
     setStartDate,
     setEndDate,
     setMinAmount,
-    setMaxAmount
+    setMaxAmount,
+    setCategory
 } from '../actions/filters'
 import { DateRangePicker } from 'react-dates'
 import ReactSlider from 'react-slider'
@@ -34,6 +35,9 @@ export class ExpenseListFilters extends React.Component {
         this.props.setMinAmount(value[0])
         this.props.setMaxAmount(value[1])
     }
+    onCategoryChange = (e) => {
+        this.props.setCategory(e.target.value)
+    }
     render() {
         return (
             <div>
@@ -55,6 +59,25 @@ export class ExpenseListFilters extends React.Component {
                             </select>
                         </div>
                         <div className="input-group__item">
+                            <select value={this.props.filters.category} onChange={this.onCategoryChange} className="text-select">
+                                <option value={-1} disabled>Select category:</option>
+                                <option value="all">All</option>
+                                <option value="food">Food</option>
+                                <option value="bills">Bills</option>
+                                <option value="clothing">Clothing</option>
+                                <option value="travel">Travel</option>
+                                <option value="taxes">Taxes</option>
+                                <option value="entertainment">Entertainment</option>
+                                <option value="education">Education</option>
+                                <option value="shopping">Shopping</option>
+                                <option value="other">Other</option>
+                            </select>
+                        </div>
+                    </div>
+                </div>
+                <div className="content-container">
+                    <div className="input-group">
+                        <div className="input-group__item__range">
                             <DateRangePicker
                                 startDate={this.props.filters.startDate}
                                 endDate={this.props.filters.endDate}
@@ -93,6 +116,7 @@ export class ExpenseListFilters extends React.Component {
 const mapStateToProps = (state) => ({filters: state.filters})
 
 const mapDispatchToProps = (dispatch) => ({
+    setCategory: (category) => dispatch(setCategory(category)),
     setStartDate: (startDate) => dispatch(setStartDate(startDate)),
     setEndDate: (endDate) => dispatch(setEndDate(endDate)),
     setTextFilter: (text) => dispatch(setTextFilter(text)),

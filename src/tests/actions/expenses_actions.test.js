@@ -1,7 +1,16 @@
 import configurMockStore from 'redux-mock-store'
 import thunk from 'redux-thunk'
 import database from '../../firebase/firebase'
-import { addExpense, editExpense, removeExpense, startAddExpense, setExpenses, startSetExpense, startRemoveExpense, startEditExpense } from '../../actions/expenses'
+import {
+    addExpense,
+    editExpense,
+    removeExpense,
+    startAddExpense,
+    setExpenses,
+    startSetExpense,
+    startRemoveExpense,
+    startEditExpense
+} from '../../actions/expenses'
 import mockExpenses from '../fixtures/expenses'
 
 const createMockStore = configurMockStore([thunk])
@@ -10,8 +19,8 @@ const defaultAuthState = { auth: { uid: testUID }}
 
 beforeEach((done) => {
     const expenseData = {}
-    mockExpenses.forEach(({ id, description, note, amount, createdAt}) => {
-        expenseData[id] = { description, note, amount, createdAt }
+    mockExpenses.forEach(({ id, category, description, note, amount, createdAt}) => {
+        expenseData[id] = { description, category, note, amount, createdAt }
     })
     database.ref(`users/${testUID}/expenses`).set(expenseData).then(() => done())
 })
@@ -49,6 +58,7 @@ test('Should add expense to database and store', (done) => {
     const store = createMockStore(defaultAuthState)
     const expenseData = {
         description: "First expense",
+        category: 'travel',
         note: 'TestNote1',
         amount: 100,
         createdAt: 1000
@@ -73,6 +83,7 @@ test('Should add expense with default data to database and store', (done) => {
     const store = createMockStore(defaultAuthState)
     const expenseData = {
         description: '',
+        category: 'other',
         note: '',
         amount: 0,
         createdAt: 0

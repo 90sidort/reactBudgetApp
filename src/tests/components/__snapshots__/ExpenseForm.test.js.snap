@@ -20,6 +20,63 @@ exports[`Should render ExpenseForm with data correctly 1`] = `
     type="text"
     value="1"
   />
+  <select
+    className="text-select"
+    onChange={[Function]}
+    value="other"
+  >
+    <option
+      disabled={true}
+      value={-1}
+    >
+      Select category:
+    </option>
+    <option
+      value="food"
+    >
+      Food
+    </option>
+    <option
+      value="bills"
+    >
+      Bills
+    </option>
+    <option
+      value="clothing"
+    >
+      Clothing
+    </option>
+    <option
+      value="travel"
+    >
+      Travel
+    </option>
+    <option
+      value="taxes"
+    >
+      Taxes
+    </option>
+    <option
+      value="entertainment"
+    >
+      Entertainment
+    </option>
+    <option
+      value="education"
+    >
+      Education
+    </option>
+    <option
+      value="shopping"
+    >
+      Shopping
+    </option>
+    <option
+      value="other"
+    >
+      Other
+    </option>
+  </select>
   <SingleDatePicker
     anchorDirection="left"
     customCloseIcon={null}
@@ -132,6 +189,63 @@ exports[`Should render ExpenseForm with no data correctly 1`] = `
     type="text"
     value=""
   />
+  <select
+    className="text-select"
+    onChange={[Function]}
+    value="other"
+  >
+    <option
+      disabled={true}
+      value={-1}
+    >
+      Select category:
+    </option>
+    <option
+      value="food"
+    >
+      Food
+    </option>
+    <option
+      value="bills"
+    >
+      Bills
+    </option>
+    <option
+      value="clothing"
+    >
+      Clothing
+    </option>
+    <option
+      value="travel"
+    >
+      Travel
+    </option>
+    <option
+      value="taxes"
+    >
+      Taxes
+    </option>
+    <option
+      value="entertainment"
+    >
+      Entertainment
+    </option>
+    <option
+      value="education"
+    >
+      Education
+    </option>
+    <option
+      value="shopping"
+    >
+      Shopping
+    </option>
+    <option
+      value="other"
+    >
+      Other
+    </option>
+  </select>
   <SingleDatePicker
     anchorDirection="left"
     customCloseIcon={null}
@@ -244,6 +358,63 @@ exports[`Should render error for invalid form submission 1`] = `
     type="text"
     value=""
   />
+  <select
+    className="text-select"
+    onChange={[Function]}
+    value="other"
+  >
+    <option
+      disabled={true}
+      value={-1}
+    >
+      Select category:
+    </option>
+    <option
+      value="food"
+    >
+      Food
+    </option>
+    <option
+      value="bills"
+    >
+      Bills
+    </option>
+    <option
+      value="clothing"
+    >
+      Clothing
+    </option>
+    <option
+      value="travel"
+    >
+      Travel
+    </option>
+    <option
+      value="taxes"
+    >
+      Taxes
+    </option>
+    <option
+      value="entertainment"
+    >
+      Entertainment
+    </option>
+    <option
+      value="education"
+    >
+      Education
+    </option>
+    <option
+      value="shopping"
+    >
+      Shopping
+    </option>
+    <option
+      value="other"
+    >
+      Other
+    </option>
+  </select>
   <SingleDatePicker
     anchorDirection="left"
     customCloseIcon={null}
@@ -361,6 +532,63 @@ exports[`Should render error for invalid form submission 2`] = `
     type="text"
     value=""
   />
+  <select
+    className="text-select"
+    onChange={[Function]}
+    value="other"
+  >
+    <option
+      disabled={true}
+      value={-1}
+    >
+      Select category:
+    </option>
+    <option
+      value="food"
+    >
+      Food
+    </option>
+    <option
+      value="bills"
+    >
+      Bills
+    </option>
+    <option
+      value="clothing"
+    >
+      Clothing
+    </option>
+    <option
+      value="travel"
+    >
+      Travel
+    </option>
+    <option
+      value="taxes"
+    >
+      Taxes
+    </option>
+    <option
+      value="entertainment"
+    >
+      Entertainment
+    </option>
+    <option
+      value="education"
+    >
+      Education
+    </option>
+    <option
+      value="shopping"
+    >
+      Shopping
+    </option>
+    <option
+      value="other"
+    >
+      Other
+    </option>
+  </select>
   <SingleDatePicker
     anchorDirection="left"
     customCloseIcon={null}
