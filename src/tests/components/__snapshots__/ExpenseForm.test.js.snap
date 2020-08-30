@@ -21,6 +21,7 @@ exports[`Should render ExpenseForm with data correctly 1`] = `
     value="1"
   />
   <select
+    className="text-select"
     onChange={[Function]}
     value="other"
   >
@@ -189,6 +190,7 @@ exports[`Should render ExpenseForm with no data correctly 1`] = `
     value=""
   />
   <select
+    className="text-select"
     onChange={[Function]}
     value="other"
   >
@@ -357,6 +359,7 @@ exports[`Should render error for invalid form submission 1`] = `
     value=""
   />
   <select
+    className="text-select"
     onChange={[Function]}
     value="other"
   >
@@ -530,6 +533,7 @@ exports[`Should render error for invalid form submission 2`] = `
     value=""
   />
   <select
+    className="text-select"
     onChange={[Function]}
     value="other"
   >
