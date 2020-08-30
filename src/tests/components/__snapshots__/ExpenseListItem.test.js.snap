@@ -19,6 +19,13 @@ exports[`Should render list item correctly 1`] = `
         TestNote1
       </small>
     </p>
+    <p
+      className="list_item_notes"
+    >
+      <small>
+        OTHER
+      </small>
+    </p>
     <span>
       1st January 1970
     </span>

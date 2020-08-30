@@ -1,5 +1,22 @@
-import { setEndDate, setStartDate, setTextFilter, sortByAmount, sortByDate, setMaxAmount, setMinAmount } from '../../actions/filters'
+import {
+    setEndDate,
+    setStartDate,
+    setTextFilter,
+    sortByAmount,
+    sortByDate,
+    setMaxAmount,
+    setMinAmount,
+    setCategory
+} from '../../actions/filters'
 import moment from 'moment'
+
+test('Should correctly generate set category object with category', () => {
+    const action = setCategory('food')
+    expect(action).toEqual({
+        type: 'SET_CATEGORY',
+        category: 'food'
+    })
+})
 
 test('Should correctly generate set end date object', () => {
     const action = setEndDate(moment(0))

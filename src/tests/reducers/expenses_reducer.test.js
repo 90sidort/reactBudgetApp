@@ -17,8 +17,8 @@ test('Should not remove expense when id is not valid', () => {
 })
 
 test('Should add an expense', () => {
-    const result = expensesReducer(undefined, { type: 'ADD_EXPENSE', expense: {id: '4', description: 'TestOne', note:"NoteOne", amount: 100, createdAt: 12345}})
-    expect(result).toEqual([{id: '4', description: 'TestOne', note:"NoteOne", amount: 100, createdAt: 12345}])
+    const result = expensesReducer(undefined, { type: 'ADD_EXPENSE' ,expense: {id: '4', description: 'TestOne', category: 'travel', note:"NoteOne", amount: 100, createdAt: 12345}})
+    expect(result).toEqual([{id: '4', description: 'TestOne', category: 'travel', note:"NoteOne", amount: 100, createdAt: 12345}])
 })
 
 test('Should edit an expense', () => {

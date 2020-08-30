@@ -22,6 +22,7 @@ exports[`Should render EditExpensePage correctly 1`] = `
       expense={
         Object {
           "amount": 100,
+          "category": "other",
           "createdAt": 0,
           "description": "First expense",
           "id": "1",

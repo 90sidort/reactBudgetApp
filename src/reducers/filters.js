@@ -3,6 +3,7 @@ import moment from 'moment'
 
 const filtersReducerDefaultState = {
     text: '',
+    category: 'all',
     minAmount: 0,
     maxAmount: 10000,
     sortBy: 'date',
@@ -21,6 +22,11 @@ const filtersReducer = (state = filtersReducerDefaultState, action) => {
             return {
                 ...state,
                 minAmount: action.minAmount
+            }
+        case 'SET_CATEGORY':
+            return {
+                ...state,
+                category: action.category
             }
         case 'SET_MAX_AMOUNT':
             return {

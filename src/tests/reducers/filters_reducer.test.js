@@ -5,6 +5,7 @@ test('Should setup default filter values', () => {
     const state = filtersReducer(undefined, { type: '@@INIT'})
     expect(state).toEqual({
         text: '',
+        category: 'all',
         sortBy: 'date',
         startDate: moment().startOf('month'),
         endDate: moment().endOf('month'),
@@ -63,4 +64,9 @@ test('Should set min amount to 100', () => {
 test('Should set min amount to 100', () => {
     const state = filtersReducer(undefined, {type: 'SET_MAX_AMOUNT', maxAmount: 1100})
     expect(state.maxAmount).toBe(1100)
+})
+
+test('Should set category to taxes', () => {
+    const state = filtersReducer(undefined, {type: 'SET_CATEGORY', category: 'taxes'})
+    expect(state.category).toBe('taxes')
 })

@@ -10,6 +10,12 @@ export const setMinAmount = (minAmount = 0) => ({
     minAmount
 })
 
+//SET_CATEGORY
+export const setCategory = (category = "all") => ({
+    type: 'SET_CATEGORY',
+    category
+})
+
 //SET_MAX_AMOUNT
 export const setMaxAmount = (maxAmount = 10000) => ({
     type: 'SET_MAX_AMOUNT',
