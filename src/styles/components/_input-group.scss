@@ -11,6 +11,9 @@
         flex-direction: row;
         margin-bottom: $l-size;
     }
+    @media (max-width: $desktop-breakpoint) {
+        width: 100%;
+    }
 }
 
 .input-group__item {
